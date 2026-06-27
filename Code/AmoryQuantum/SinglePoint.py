@@ -1,5 +1,6 @@
 import sys
 import pyscf
+import gpu4pyscf
 import gpu4pyscf.dft as dft
 from dataclasses import dataclass
 import time
