@@ -70,6 +70,20 @@ def build_dft(mol: pyscf.gto.Mole, method: str) -> gpu4pyscf.dft.UKS:
 def main() -> None:
     start = time.perf_counter()
     structure = sys.argv[1]
+    for arg in sys.argv[2:]:
+        if "-c" in arg:
+            GLOBAL_VARIABLES.charge = int(arg.split("=")[1])
+        if "-s" in arg:
+            GLOBAL_VARIABLES.spin = int(arg.split("=")[1])
+        if "-m=" in arg:
+            GLOBAL_VARIABLES.method = str(arg.split("=")[1])
+        if "-b" in arg:
+            GLOBAL_VARIABLES.basis_set = str(arg.split("=")[1])
+
+        if "-mem" in arg:
+            GLOBAL_VARIABLES.memory = int(arg.split("=")[1])
+
+
     molecule = gen_mol(file=structure,
                     basis=GLOBAL_VARIABLES.basis_set,
                     charge=GLOBAL_VARIABLES.charge,
