@@ -20,3 +20,13 @@ There are example build and run sripts in `/Code/Scripts/DockerBuild.sh` and `/C
 - `-m=B3LYP` = The QM method to use. If you want a faster job, use `PBE`, if you want a slower job, use `wB997X`.
 - `-b=def2-SVP` = The basis set to use. If you want a faster job, use `sto-3g`, if you want a slower job, use `def2-DVP`.
 - `-mem=1000` = The ammount of memory to give the job (in MB). This does not include standard python memory etc so give less than the total available memory.   
+
+## Running the array job:
+
+There is an `ArrayFile.txt` that one could provide to slurm where each line is an independent job to be run. This can be found at `/Data/ArrayJob/ArrayFile.txt`. 
+
+I recommend duplicating this directory for each test, and for each different hardware that you use as the output files are overwritten every time you run a job. 
+
+## Job Outputs:
+
+Every job should create 2 files, an output file linked to the calculation (What the end user would normally want to see) and a summary file in json format. The names of the files are `MOLECULE_METHOD_BASIS.out` and `MOLECULE_METHOD_BASIS.json`. The `.out` file will not be usefull unless errors occurr, as they may be printed here. The `.json` file is only created after successfull completion of the calculation and contains timings for a few different parts of the calculation. The useful timing point will be the `total_time` that is the total time of the calculation. This can be used to compare performance.
