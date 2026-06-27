@@ -92,7 +92,8 @@ def main() -> None:
                     charge=GLOBAL_VARIABLES.charge,
                     spin=GLOBAL_VARIABLES.spin,
                     memory=GLOBAL_VARIABLES.memory,
-                    method=GLOBAL_VARIABLES.method
+                    method=GLOBAL_VARIABLES.method)
+    
     mol_time = time.perf_counter()
     mf = build_dft(mol = molecule,
                 method = GLOBAL_VARIABLES.method)
