@@ -42,7 +42,7 @@ def gen_mol(
     mol.charge = charge
     mol.spin = spin
     mol.symmetry = False # pySCF symmetry optimisations dont work very well...
-    mol.verbose = 5
+    mol.verbose = 4
     mol.cart=False
     mol.max_memory=memory
     mol.build()
@@ -95,6 +95,7 @@ def main() -> None:
                 method = GLOBAL_VARIABLES.method)
     mf_time = time.perf_counter()
     mf.kernel()
+#    mf.newton().run()
     mf_exe_time = time.perf_counter()
 
     data = dict(mol_build_time = mol_time - start,
