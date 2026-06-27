@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --privileged --runtime=nvidia -it -v $PWD:/app/data  forcetest:latest sp MOLECULE.xyz
+docker run --privileged --runtime=nvidia -it -v $PWD:/app/data  amory-quantum:latest sp H2O.xyz

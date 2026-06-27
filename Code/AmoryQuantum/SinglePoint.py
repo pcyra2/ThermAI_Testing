@@ -36,7 +36,7 @@ def gen_mol(
         mol (pyscf.gto.Mole): The build molecule object. The output file defaults to `MOLECULE_BASIS.out`.
     """
     mol = pyscf.gto.Mole(atom=file, unit="Ang")
-    mol.output=f"{file.replace(".xyz")}_{basis}.out"
+    mol.output=f"{file.replace('.xyz','')}_{basis}.out"
     mol.basis = basis
     mol.charge = charge
     mol.spin = spin
@@ -88,7 +88,7 @@ def main() -> None:
                 total_time = mf_exe_time - start,
                 e_tot = mf.e_tot
                 )
-    data_file_name = f"{structure.replace(".xyz","")}_{GLOBAL_VARIABLES.basis_set}_summary.json"
+    data_file_name = f"{structure.replace('.xyz','')}_{GLOBAL_VARIABLES.basis_set}_summary.json"
     with open( file = data_file_name, mode = "w") as file:
         json.dump(obj = data, fp = file)
     
