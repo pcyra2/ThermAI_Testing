@@ -20,7 +20,8 @@ def gen_mol(
         basis: str = "sto-3g",
         charge: int = 0,
         spin: int = 0,
-        memory: int = 15000
+        memory: int = 15000,
+        method: str = "B3LYP"
         ) -> pyscf.gto.Mole:
     """Generates the pySCF molecule object that can be used for further calculations.
 
@@ -32,12 +33,13 @@ def gen_mol(
         charge (int): The net charge of the system. Defaults to 0.
         spin (int): The net spin of the system. This should be 2S, not 2S+1. Defaults to 0.
         memory (int): The amount of memory in MB that will be allocated to the calculation.
+        method (str): The QM method to use for file naming
     
     Returns:
-        mol (pyscf.gto.Mole): The build molecule object. The output file defaults to `MOLECULE_BASIS.out`.
+        mol (pyscf.gto.Mole): The build molecule object. The output file defaults to `MOLECULE_METHOD_BASIS.out`.
     """
     mol = pyscf.gto.Mole(atom=file, unit="Ang")
-    mol.output=f"{file.replace('.xyz','')}_{basis}.out"
+    mol.output=f"{file.replace('.xyz','')}_{method}_{basis}.out"
     mol.basis = basis
     mol.charge = charge
     mol.spin = spin
@@ -104,7 +106,7 @@ def main() -> None:
                 total_time = mf_exe_time - start,
                 e_tot = mf.e_tot
                 )
-    data_file_name = f"{structure.replace('.xyz','')}_{GLOBAL_VARIABLES.basis_set}_summary.json"
+    data_file_name = f"{structure.replace('.xyz','')}_{GLOBAL_VARIABLES.method}_{GLOBAL_VARIABLES.basis_set}_summary.json"
     with open( file = data_file_name, mode = "w") as file:
         json.dump(obj = data, fp = file)
     
