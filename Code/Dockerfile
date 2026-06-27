@@ -35,7 +35,7 @@ RUN apt-get install -y ca-certificates gpg
 RUN pip install cmake
 RUN pip install basis-set-exchange
 WORKDIR /app
-ADD forces ./forces 
+ADD AmoryQuantum ./AmoryQuantum 
 ADD setup.py .
 RUN pip install -e . 
 
