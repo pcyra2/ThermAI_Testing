@@ -1,0 +1,34 @@
+
+Currently Loaded Modules:
+  1) lmod                3) cuda-uoneasy/12.6.0
+  2) slurm/23.02.6 (S)   4) singularity/3.8.5
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+pes.1.xyz
+WARNING: underlay of /etc/localtime required more than 50 (82) bind mounts
+WARNING: underlay of /usr/bin/nvidia-smi required more than 50 (399) bind mounts
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.2.2
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+/usr/local/lib/python3.10/dist-packages/gpu4pyscf/lib/cutensor.py:136: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+output file: pes.1_B3LYP_def2-SVP.out
+/usr/local/lib/python3.10/dist-packages/pyscf/dft/libxc.py:512: UserWarning: Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, corresponding to the original definition by Stephens et al. (issue 1480) and the same as the B3LYP functional in Gaussian. To restore the VWN5 definition, you can put the setting "B3LYP_WITH_VWN5 = True" in pyscf_conf.py
+  warnings.warn('Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, '
+WARN: system HOMO 0.0212393947501561 >= system LUMO 0.158904315876216

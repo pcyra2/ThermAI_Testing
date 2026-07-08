@@ -1,0 +1,48 @@
+
+Currently Loaded Modules:
+  1) lmod                             9) Tcl/8.6.13-GCCcore-13.2.0
+  2) nottingham                      10) SQLite/3.43.1-GCCcore-13.2.0
+  3) binutils/2.40-GCCcore-13.2.0    11) XZ/5.4.4-GCCcore-13.2.0
+  4) bzip2/1.0.8-GCCcore-13.2.0      12) libffi/3.4.4-GCCcore-13.2.0
+  5) zlib/1.2.13-GCCcore-13.2.0      13) OpenSSL/1.1
+  6) libreadline/8.2-GCCcore-13.2.0  14) python-uoneasy/3.11.5-GCCcore-13.2.0
+  7) GCCcore/13.2.0                  15) CUDA/12.8.0
+  8) ncurses/6.4-GCCcore-13.2.0
+
+ 
+
+pes.19.xyz
+WARNING: Could not fallback to underlay, disabled by configuration ('enable underlay = no')
+WARNING: Skipping mount /etc/localtime [binds]: /etc/localtime doesn't exist in container
+WARNING: Skipping mount /usr/bin/nvidia-smi [files]: /usr/bin/nvidia-smi doesn't exist in container
+WARNING: Skipping mount /usr/bin/nvidia-debugdump [files]: /usr/bin/nvidia-debugdump doesn't exist in container
+WARNING: Skipping mount /usr/bin/nvidia-persistenced [files]: /usr/bin/nvidia-persistenced doesn't exist in container
+WARNING: Skipping mount /usr/bin/nvidia-cuda-mps-control [files]: /usr/bin/nvidia-cuda-mps-control doesn't exist in container
+WARNING: Skipping mount /usr/bin/nvidia-cuda-mps-server [files]: /usr/bin/nvidia-cuda-mps-server doesn't exist in container
+WARNING: Skipping mount /var/run/nvidia-persistenced/socket [files]: /var/run/nvidia-persistenced/socket doesn't exist in container
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.2.2
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+/usr/local/lib/python3.10/dist-packages/gpu4pyscf/lib/cutensor.py:136: UserWarning: using cupy as the tensor contraction engine.
+  warnings.warn(f'using {contract_engine} as the tensor contraction engine.')
+output file: pes.19_B3LYP_def2-SVP.out
+/usr/local/lib/python3.10/dist-packages/cuda/pathfinder/_binaries/find_nvidia_binary_utility.py:100: UserWarning: Multiple CUDA environment variables are set but differ:
+  CUDA_PATH=/sulis/easybuild/software/CUDA/12.8.0
+  CUDA_HOME=/usr/local/cuda
+Using CUDA_PATH (highest priority).
+  if (cuda_home := get_cuda_path_or_home()) is not None:
+/usr/local/lib/python3.10/dist-packages/pyscf/dft/libxc.py:512: UserWarning: Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, corresponding to the original definition by Stephens et al. (issue 1480) and the same as the B3LYP functional in Gaussian. To restore the VWN5 definition, you can put the setting "B3LYP_WITH_VWN5 = True" in pyscf_conf.py
+  warnings.warn('Since PySCF-2.3, B3LYP (and B3P86) are changed to the VWN-RPA variant, '
+WARN: system HOMO 0.0237521186448456 >= system LUMO 0.159084261819467
